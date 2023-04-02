@@ -36,4 +36,22 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/login")
+	public String login(Locale locale, Model model) {
+		
+		return "login";
+	}
+	
+	@RequestMapping("/default")
+	public String defa(Locale locale, Model model) {
+		
+		return "default";
+	}
+	
+	@RequestMapping("/join")
+	public String join(Locale locale, Model model) {
+		
+		return "join";
+	}
+	
 }
