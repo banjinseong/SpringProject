@@ -13,11 +13,11 @@
     crossorigin="anonymous"></script>
 <style>
 .naver{
-	background-image: url('resources/img/naverhov.png');
+	background-image: url('${pageContext.request.contextPath}/resources/img/naverhov.png');
 	background-size:105px;
 }
 .naver:hover{
-	background-image: url('resources/img/naver.png');
+	background-image: url('${pageContext.request.contextPath}/resources/img/naver.png');
 	background-size:105px;
 }
 </style>
