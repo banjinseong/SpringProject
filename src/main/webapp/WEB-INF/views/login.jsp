@@ -30,11 +30,8 @@
 		        </a>
 		
 		        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-		          <li><a href="home.jsp" class="nav-link px-2 text-secondary">Home</a></li>
-		          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-		          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-		          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-		          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+		          <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+		          <li><a href="#" class="nav-link px-2 text-white">당근</a></li>
 		        </ul>
 		
 		        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -42,9 +39,9 @@
 		        </form>
 		
 		        <div class="text-end">
-		          <button class="btn naver" id="btn" type="submit" style="width:100px; height:40px"></button>		          
-		          <button type="button" class="btn btn-outline-light me-2">Login</button>
-		          <button type="button" class="btn btn-warning">Sign-up</button>
+    		      <button class="btn naver" id="btn" type="submit" style="width:100px; height:40px"></button>
+		          <button type="button" class="btn btn-outline-light me-2" onClick="location.href='/login'">Login</button>
+		          <button type="button" class="btn btn-warning" onClick="location.href='/join'">Sign-up</button>
 		        </div>
 	    	</div>
 	    </div>
@@ -58,8 +55,8 @@
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <input type="text" class="form-control" id="floatingInput" placeholder="Id">
+      <label for="floatingInput">Id</label>
     </div>
     <div class="form-floating">
       <input type="password" class="form-control" id="floatingPassword" placeholder="Password">

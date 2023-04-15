@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.inhatc.mapper.BoardMapper">
+ 	<insert id="enroll">
+ 		insert into posts(id,title,content,writer, view,created_date,modified_date, user_id)
+ 		 values(#{id}, #{title}, #{content}, #{writer}, #{view}, #{created_date},#{modified_date}, #{user_id})
+ 	</insert>
+ 
+ <!-- 페이징 없이 모든 목록 출력
+  	<select id="getList" resultType="com.inhatc.model.BoardVO">
+ 		select * from posts order by id desc
+ 	</select>
+ 	-->
+ 	
+ 	<select id="getListPaging" resultType="com.inhatc.model.BoardVO">
+    
+        select * from (
+                select id, title, writer, view, created_date  
+                from posts order by id desc) as T1 
+        <!-- limit ((${pageNum}-1)*${amount}), ${amount} -->
+        limit #{skip},#{amount}
+    
+    </select>
+    
+    <!-- 게시물 총 개수 -->
+    <select id="getTotal" resultType="int">
+    	select count(*) from posts
+    </select>
+    
+    <select id="getView" resultType="com.inhatc.model.BoardVO">
+    	select * from posts where id = #{id}
+    </select>
+  </mapper>

@@ -13,11 +13,11 @@
     crossorigin="anonymous"></script>
 <style>
 .naver{
-	background-image: url('resources/img/naverhov.png');
+	background-image: url('${pageContext.request.contextPath}/resources/img/naverhov.png');
 	background-size:105px;
 }
 .naver:hover{
-	background-image: url('resources/img/naver.png');
+	background-image: url('${pageContext.request.contextPath}/resources/img/naver.png');
 	background-size:105px;
 }
 </style>
@@ -47,5 +47,46 @@
 	    </div>
 	</header>
 <!-- 상단바 끝 --><br>
+
+	<div class="container">
+		<div class="row">	
+			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+				<thead>
+					<tr>
+						<th colspan="3" style="background-color: #eeeeee; text-align: center;">게시판 글보기
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="width: 20%">글제목
+						<td colspan="2">${pageInfo.title }
+					</tr>
+					<tr>
+						<td>작성자</td>
+						<td colspan="2">${pageInfo.writer }</td>
+					</tr>
+					<tr>
+						<td>수정일자</td>
+						<td colspan="2">${pageInfo.modified_date }</td>
+					</tr>
+					<tr>  
+						<td>내용</td>
+						<td colspan="2" style="text-align: left;">
+						<div style="min-height:200px">
+							${pageInfo.content }
+						</div>
+						</td>
+					</tr>			
+				</tbody>				
+			</table>
+			<div class="btn_wrap">
+				<a href="/" class="btn btn-primary">목록</a>			
+				<a href="" class="btn btn-primary">수정</a>
+				<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="" class="btn btn-primary">삭제</a>
+			</div>
+		</div>
+	</div>
+				
+
 </body>
 </html>
