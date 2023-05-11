@@ -21,4 +21,6 @@ public interface BoardService {
 	
 	//게시판 조회
 	public BoardVO getView(int id);
+	
+	
 }

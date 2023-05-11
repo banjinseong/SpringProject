@@ -13,11 +13,11 @@
     crossorigin="anonymous"></script>
 <style>
 .naver{
-	background-image: url('resources/img/naverhov.png');
+	background-image: url("${pageContext.request.contextPath}/resources/img/naverhov.png");
 	background-size:105px;
 }
 .naver:hover{
-	background-image: url('resources/img/naver.png');
+	background-image: url('${pageContext.request.contextPath}/resources/img/naver.png');
 	background-size:105px;
 }
 </style>
@@ -37,46 +37,19 @@
 		        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
 		          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
 		        </form>
-		
+				<c:if test="${signIn == null }">
 		        <div class="text-end">
     		      <button class="btn naver" id="btn" type="submit" style="width:100px; height:40px"></button>
-		          <button type="button" class="btn btn-outline-light me-2" onClick="location.href='/login'">Login</button>
-		          <button type="button" class="btn btn-warning" onClick="location.href='/join'">Sign-up</button>
+		          <button type="button" class="btn btn-outline-light me-2" onClick="location.href='/member/login'">${signIn.username }<</button>
+		          <button type="button" class="btn btn-warning" onClick="location.href='/member/join'">Sign-up</button>
 		        </div>
+		        </c:if>
+		        <c:if test="${signIn != null }">
+		        <button type="button" class="btn btn-warning" onClick="location.href='/member/join'">${signIn.username }입니다</button>
+		        </c:if>
 	    	</div>
 	    </div>
 	</header>
 <!-- 상단바 끝 --><br>
-    
-<!-- 회원가입 시작 -->
-
-<main class="form-signin w-50 m-auto text-center">
-  <form>
-    <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
-
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Id">
-      <label for="floatingInput">Id</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
-
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="CHK Password">
-      <label for="floatingPassword">CHK Password</label>
-    </div>
-    <br>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-  </form>
-</main>
-<!-- 회원가입 끝 -->
-
-
 </body>
 </html>
