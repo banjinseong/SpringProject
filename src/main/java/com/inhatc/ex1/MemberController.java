@@ -51,21 +51,14 @@ public class MemberController {
 	public String AuthLoginPost(MemberVO member, HttpServletRequest request, RedirectAttributes rttr) {
 		MemberVO mem = service.login(member.getUsername());
 		HttpSession session = request.getSession();
-		System.out.println(mem);
-		System.out.println("¸â¹ö"+member);
-
 		if(mem==null) {
 			rttr.addFlashAttribute("sign", "no id");
-			System.out.println(request.getSession());
-			session.setAttribute("signIn", null);
 			return "redirect:/member/login";
 		}else if(!member.getPassword().equals(mem.getPassword())) {
-			session.setAttribute("signIn", null);
 			rttr.addFlashAttribute("sign", "no pw");
 			return "redirect:/member/login";
 		}else {
-			session.setAttribute("signIn", mem);
-			System.out.println(request.getSession());
+			session.setAttribute("login", mem);
 			return "redirect:/board/home";
 		}
 		
@@ -114,4 +107,17 @@ public class MemberController {
 			return "available";
 		}
 	}
+	
+	//·Î±×¾Æ¿ô
+	@RequestMapping(value="logout", method=RequestMethod.GET)
+    public String logoutMainGET(HttpServletRequest request) throws Exception{
+
+        
+        HttpSession session = request.getSession();
+        
+        session.invalidate();
+        
+        return "redirect:/board/home";        
+        
+    }
 }

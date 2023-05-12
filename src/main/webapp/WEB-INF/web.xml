@@ -30,6 +30,15 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
+	<session-config>
+    	<session-timeout>30</session-timeout> <!-- 세션 유효 시간 (분) -->
+	    <!-- 세션 ID 생성 방식 (기본값은 JSESSIONID) -->
+	    <cookie-config>
+	      <name>MYSESSIONID</name>
+	      <http-only>true</http-only>
+	      <secure>true</secure>
+	    </cookie-config>
+	</session-config>
 	
 	
 	<filter>
