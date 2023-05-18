@@ -7,6 +7,11 @@
  		insert into posts(id,title,content,writer, view,created_date,modified_date, user_id)
  		 values(#{id}, #{title}, #{content}, #{writer}, #{view}, #{created_date},#{modified_date}, #{user_id})
  	</insert>
+ 	
+ 	<insert id="enrollcomment">
+ 		insert into comment(bno, content, writer, created_date)
+ 		 values(#{bno}, #{content}, #{writer}, #{created_date})
+ 	</insert>
  
  <!-- 페이징 없이 모든 목록 출력
   	<select id="getList" resultType="com.inhatc.model.BoardVO">
@@ -24,12 +29,42 @@
     
     </select>
     
+    <select id="getCommentPaging" resultType="com.inhatc.model.CommentVO">
+    
+        select * from (
+                select id,writer, content, created_date
+                from comment where bno = #{arg1} order by id desc) as T1 
+        <!-- limit ((${pageNum}-1)*${amount}), ${amount} -->
+        limit #{arg0.skip},#{arg0.amount}
+    
+    </select>
+    
     <!-- 게시물 총 개수 -->
     <select id="getTotal" resultType="int">
     	select count(*) from posts
     </select>
     
+     <select id="getCommentTotal" resultType="int">
+    	select count(*) from comment where bno = #{bno}
+    </select>
+    
     <select id="getView" resultType="com.inhatc.model.BoardVO">
     	select * from posts where id = #{id}
     </select>
+    
+    <update id="upView">
+    	update posts set view = view + 1 where id = #{id}
+    </update>
+    
+    <delete id="delete">
+    	delete from posts where id = ${id}
+    </delete>
+    
+    <delete id="commentdelete">
+    	delete from comment where id = ${id}
+    </delete>
+    
+    <update id="update">
+    	update posts set title = #{title}, content = #{content}, created_date = #{created_date}, modified_date = #{modified_date} where id = #{id}
+    </update>
   </mapper>

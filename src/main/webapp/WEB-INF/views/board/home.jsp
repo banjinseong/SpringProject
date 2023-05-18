@@ -36,9 +36,9 @@
 				<thead>
 					<tr>
 						<th width="15%" style="background-color: black; color: white; text-align: left;">번호
-						<th width="55%" style="background-color: black; color: white; text-align: center;">제목
+						<th width="50%" style="background-color: black; color: white; text-align: center;">제목
 						<th width="10%" style="background-color: black; color: white; text-align: left;">작성자
-						<th width="10%" style="background-color: black; color: white; text-align: left;">작성일
+						<th width="15%" style="background-color: black; color: white; text-align: left;">작성일
 						<th width="10%" style="background-color: black; color: white; text-align: left;">조회수
 					</tr>
 				</thead>
@@ -119,6 +119,9 @@
 	            alert("등록이 완료되었습니다.");
 	        }
 	        
+	        if(result === "enroll fail"){
+	            alert("로그인 해주세요.");
+	        }
 	    }    
 	    
 	});

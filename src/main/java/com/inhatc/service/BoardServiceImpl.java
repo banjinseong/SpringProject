@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.inhatc.mapper.BoardMapper;
 import com.inhatc.model.BoardVO;
+import com.inhatc.model.CommentVO;
 import com.inhatc.model.paging;
 
 @Service
@@ -40,5 +41,49 @@ public class BoardServiceImpl implements BoardService{
 	public BoardVO getView(int id) {
 		return mapper.getView(id);
 	}
+
+	@Override
+	public void upView(int id) {
+		mapper.upView(id);
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		mapper.delete(id);
+		
+	}
+
+	@Override
+	public void update(BoardVO board) {
+		mapper.update(board);
+		
+	}
+
+	@Override
+	public List<CommentVO> getCommentPaging(paging pg, int id) {
+		// TODO Auto-generated method stub
+		return mapper.getCommentPaging(pg, id);
+	}
+
+	@Override
+	public void enrollcomment(CommentVO comment) {
+		mapper.enrollcomment(comment);
+		
+	}
+
+	@Override
+	public void commentdelete(int id) {
+		mapper.commentdelete(id);
+		
+	}
+
+	@Override
+	public int getCommentTotal(int bno) {
+		// TODO Auto-generated method stub
+		return mapper.getCommentTotal(bno);
+	}
+
+	
 
 }

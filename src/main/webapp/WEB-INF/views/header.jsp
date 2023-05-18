@@ -52,7 +52,7 @@
 				    <!-- 세션 값이 있을 때의 처리 -->
 				    <div class="text-end">
 				    	<c:out value="${sessionScope.login.nickname }님 안녕하세요."></c:out>
-				    	<button type="button" class="btn btn-warning" onClick="location.href='/member/logout'">logout</button>
+				    	<button type="button" class="btn btn-info" onClick="location.href='/member/logout'">logout</button>
 				    </div>
 				</c:if>
 	    	</div>
