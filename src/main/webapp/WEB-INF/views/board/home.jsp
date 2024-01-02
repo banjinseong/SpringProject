@@ -29,7 +29,7 @@
 <!-- 상단바 끝 -->
 
 <!-- 중단바 시작  -->
-	<div class="container"">
+	<div class="container">
 		<div class="row">
 <!-- 게시판내용 시작 -->
 			<table class="table" style="text-align: center; border: 1px solid #dddddd">
@@ -91,13 +91,16 @@
 		<form id="moveForm" method="get">
 			<input type="hidden" name="pageNum" value="${pageMaker.pg.pageNum }">
 			<input type="hidden" name="pageamount" value="${pageMaker.pg.amount }">
-			
+			<input type="hidden" name="keyword" value="${pageMaker.pg.keyword }">
 		</form>
 		<!-- 이부분 무슨 뜻인지 아직 모름 -->
 <!-- 페이지 번호 끝 -->
 	</div>
 
 <!-- 중단바 끝 --><br>
+<!-- Footer-->
+	<%@ include file="/WEB-INF/views/footer.jsp" %>
+
 <!-- 등록 확인 스크립트 -->
 <script>
 	$(document).ready(function(){

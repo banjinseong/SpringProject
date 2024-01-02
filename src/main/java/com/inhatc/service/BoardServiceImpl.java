@@ -33,8 +33,8 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public int getTotal() {
-		return mapper.getTotal();
+	public int getTotal(paging pg) {
+		return mapper.getTotal(pg);
 	}
 
 	@Override

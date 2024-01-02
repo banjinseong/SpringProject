@@ -4,7 +4,16 @@ public class paging {
 	private int pageNum;
 	private int amount;
 	private int skip;
+	private String keyword;
 	
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
 	public paging() {
 		this(1,10);
 		this.skip = 0;

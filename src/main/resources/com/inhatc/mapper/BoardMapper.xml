@@ -23,7 +23,10 @@
     
         select * from (
                 select id, title, writer, view, created_date  
-                from posts order by id desc) as T1 
+                from posts 
+                <if test="keyword != null">
+                	where title like concat('%',#{keyword},'%')
+                </if>order by id desc) as T1 
         <!-- limit ((${pageNum}-1)*${amount}), ${amount} -->
         limit #{skip},#{amount}
     
@@ -42,6 +45,9 @@
     <!-- 게시물 총 개수 -->
     <select id="getTotal" resultType="int">
     	select count(*) from posts
+    	<if test="keyword != null">
+        	where title like concat('%',#{keyword},'%')
+        </if>
     </select>
     
      <select id="getCommentTotal" resultType="int">

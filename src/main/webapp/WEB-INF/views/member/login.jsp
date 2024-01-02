@@ -53,7 +53,8 @@
   </form>
 </main>
 <!-- 로그인 끝 -->
-
+<!-- Footer-->
+	<%@ include file="/WEB-INF/views/footer.jsp" %>
 <script>
 $(document).ready(function(){
     

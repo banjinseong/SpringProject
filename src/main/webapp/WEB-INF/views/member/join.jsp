@@ -60,7 +60,8 @@
   </form>
 </main>
 <!-- 회원가입 끝 -->
-
+<!-- Footer-->
+	<%@ include file="/WEB-INF/views/footer.jsp" %>
 
 <script>
 $(document).ready(function(){

@@ -11,7 +11,7 @@
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property> 
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/board?serverTimezone=UTC&amp;characterEncoding=UTF-8&amp;useSSL=false"></property> 
         <property name="username" value="root"></property> 
-        <property name="password" value="inhatc"></property> 
+        <property name="password" value="rootpw"></property> 
     </bean> 
     
     <bean id="datasource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close"> 

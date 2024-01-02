@@ -18,7 +18,7 @@ public interface BoardService {
 	public List<BoardVO> getListPaging(paging pg);
 	
 	//게시판 총 갯수
-	public int getTotal();
+	public int getTotal(paging pg);
 	
 	//게시판 조회
 	public BoardVO getView(int id);

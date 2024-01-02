@@ -1,0 +1,5 @@
+com\inhatc\ex1\DataSourceTest.class
+com\inhatc\mapper\BoardMapperTests.class
+com\inhatc\ex1\JDBCTest.class
+com\inhatc\service\BoardServiceTests.class
+com\inhatc\service\MemberServiceTests.class

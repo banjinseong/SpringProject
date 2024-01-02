@@ -145,6 +145,8 @@
 </c:if>
 <!-- 댓글 작성 끝 -->
 <!-- 댓글끝 -->
+<!-- Footer-->
+	<%@ include file="/WEB-INF/views/footer.jsp" %>
 <script>
 let moveForm = $("#moveForm");
 	$(".pagination a").on("click", function(e){

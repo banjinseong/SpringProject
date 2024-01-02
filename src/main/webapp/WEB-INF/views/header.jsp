@@ -37,7 +37,7 @@
 		        </ul>
 		
 		        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-		          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+		          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." name="keyword" value="${pageMaker.pg.keyword }">
 		        </form>
 				<c:if test="${empty sessionScope.login}">
 		        <div class="text-end">
