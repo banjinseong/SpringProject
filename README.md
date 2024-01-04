@@ -9,15 +9,17 @@
 
 ## 🔧개발환경 설정
 - IDE: Spring Tool Suite(STS) 3.9.18
+  
 - 빌드도구: Maven
+  
 - 서버: Apache Tomcat
+  
 - 데이터베이스: MySQL
+  
 - 프레임워크 및 라이브러리:
   - Spring
   - MyBatis
-
 <br>
-
 ## 🖥️ 작동화면
 ### 홈 화면
 <div align="center">
