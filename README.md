@@ -1,6 +1,6 @@
 # 스프링 게시판
 <br>
-블로그 주소 - [https://velog.io/@banjinseong/Spring%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0-0-%EC%84%A4%EC%A0%95](https://velog.io/@banjinseong/series/Spring)
+블로그 주소 - https://velog.io/@banjinseong/series/Spring
 <br>
 
 ## 🎯 목적
